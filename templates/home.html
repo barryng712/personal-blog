@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Personal Blog{% endblock %}
+
+{% block content %}
+    <div class="article-list">
+        {% for article in articles %}
+            <div class="article-item">
+                <div class="article-header">
+                    <h2 class="article-title"><a href="{{ url_for('article', id=article.id) }}">{{ article.title }}</a></h2>
+                    <span class="article-date">Posted on {{ article.date }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
